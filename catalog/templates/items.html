@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+</head>
+<body>
+<h1>{{catalog_name}} Items ({{num}} items)</h1>
+<br>
+<br>
+{% for i in items %}
+    <a href="{{ url_for('itemDesc', catalog_name = catalog_name, item_name = i.name) }}">{{ i.name }}</a>
+    <br>
+{% endfor %}
+</body>
+</html>
