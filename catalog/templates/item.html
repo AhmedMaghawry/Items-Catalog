@@ -9,5 +9,10 @@
 <div>
     <p>Description : {{ item.description }}</p>
 </div>
+{% if good %}
+    <a href="{{url_for('editItem', item_name=item.name)}}">Edit</a><br>
+    <a href="{{url_for('deleteItem', item_name=item.name)}}">Delete</a>
+    <br>
+{% endif %}
 </body>
 </html>

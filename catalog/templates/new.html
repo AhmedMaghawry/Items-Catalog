@@ -7,11 +7,11 @@
 <body>
 
 <h1>Add New Item</h1>
-<form action="{{ url_for('addItem', item_name = item.name) }}" method="post">
+<form action="{{ url_for('addItem') }}" method="post">
     <p>Title</p>
-    <input type = 'text' placeholder="{{ item.name }}" name="name"><br>
+    <input type = 'text' placeholder="Name" name="name"><br>
     <p>Description</p>
-    <input type = 'text' placeholder="{{ item.description }}" name="desc"><br>
+    <input type = 'text' placeholder="Description" name="desc"><br>
     <p>Catagory</p>
     <div>
       <select name="sel">

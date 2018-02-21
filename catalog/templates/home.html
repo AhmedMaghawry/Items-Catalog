@@ -5,10 +5,20 @@
     <title>Home</title>
 </head>
 <body>
-<a href="#">Login</a>
-<!--<a href="{{url_for('addItem')}}">Add new Type</a>-->
-<h1>Categories</h1>
-<br>
+
+{% if good %}
+    {% if google %}
+        <a href="{{url_for('gdisconnect')}}">Sign out</a><br>
+    {% else %}
+        <a href="{{url_for('fbdisconnect')}}">Sign out</a><br>
+    {% endif%}
+    <h1>Categories</h1>
+    <a href="{{url_for('addItem')}}">Add new Item</a>
+    <br>
+{% else: %}
+    <a href="{{url_for('showLogin')}}">Login</a>
+    <h1>Categories</h1>
+{% endif %}
 <br>
 {% for i in catalogs %}
     <a href="{{ url_for('catalogItems', catalog_name = i.name) }}">{{ i.name }}</a>
